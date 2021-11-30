@@ -2,11 +2,14 @@ package com.tw;
 
 public class MultiplicationTable {
     public String create(int start, int end) {
+        if (isValid(start,end)){
+            return generateTable(start,end);
+        }
         return null;
     }
 
     public Boolean isValid(int start, int end) {
-        return null;
+        return isInRange(start) && isInRange(end) && isStartNotBiggerThanEnd(start,end);
     }
 
     public Boolean isInRange(int number) {
@@ -14,18 +17,32 @@ public class MultiplicationTable {
     }
 
     public Boolean isStartNotBiggerThanEnd(int start, int end) {
-        return null;
+        return start<=end;
     }
 
     public String generateTable(int start, int end) {
-        return null;
+        String string="";
+        for (int index=start; index<=end; index++){
+            string=string.concat(generateLine(start,index)+"\r\n");
+        }
+        return string.trim();
     }
 
     public String generateLine(int start, int row) {
-        return null;
+        String string = "";
+        int temp =row;
+        int temp1=start;
+        for  (int index=start; index<=row; index++) {
+            string=string.concat(generateSingleExpression(index,row) + "  ");
+            temp=temp+1;
+            temp1=temp1+1;
+        }
+        return string.trim();
     }
 
     public String generateSingleExpression(int multiplicand, int multiplier) {
-        return null;
+        return multiplicand+"*"+multiplier+"="+multiplicand*multiplier;
     }
+
+
 }

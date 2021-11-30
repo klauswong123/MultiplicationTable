@@ -98,7 +98,8 @@ public class MultiplicationTableTest {
         //when
         String actual = multiplicationTable.generateLine(start, row);
         String expected = "2*5=10  3*5=15  4*5=20  5*5=25";
-
+        System.out.println(actual);
+        System.out.println("testing");
         //then
         assertEquals(expected, actual);
     }
@@ -155,7 +156,6 @@ public class MultiplicationTableTest {
 
         //when
         String actual = multiplicationTable.create(start, end);
-
         //then
         assertEquals("2*2=4", actual);
     }
